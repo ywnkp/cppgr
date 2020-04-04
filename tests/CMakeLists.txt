@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.8)
 include(ExternalProject)
 
+set(contrib_github_gtest_git_tag release-1.10.0)
 externalproject_add(contrib_github_gtest
     GIT_REPOSITORY    https://github.com/google/googletest.git
-    GIT_TAG           release-1.10.0
+    GIT_TAG           ${contrib_github_gtest_git_tag}
     CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}"
-    PREFIX contrib_github_gtest-1.10.0
+    PREFIX contrib_github_gtest-${contrib_github_gtest_git_tag}
 )
 
 add_library(gtest STATIC IMPORTED)
