@@ -7,6 +7,7 @@ externalproject_add(contrib_github_gtest
     GIT_TAG           ${contrib_github_gtest_git_tag}
     GIT_CONFIG advice.detachedHead=false
     PREFIX contrib_github_gtest-${contrib_github_gtest_git_tag}
+    BUILD_BYPRODUCTS <BINARY_DIR>/lib/libgtest.a <BINARY_DIR>/lib/libgtest_main.a
     INSTALL_COMMAND ""
 )
 
