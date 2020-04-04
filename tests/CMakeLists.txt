@@ -30,10 +30,12 @@ add_dependencies(gtest_main contrib_github_gtest)
 
 include_directories(${SOURCE_DIR}/googletest/include)
 
+find_package(Threads)
+
 add_executable(test_stub
     test_stub.cpp
 )
-target_link_libraries(test_stub gtest gtest_main)
+target_link_libraries(test_stub gtest gtest_main ${CMAKE_THREAD_LIBS_INIT})
 
 add_test(NAME test_stub
     COMMAND $<TARGET_FILE:test_stub> --gtest_output=xml:${CMAKE_CURRENT_BINARY_DIR}/
