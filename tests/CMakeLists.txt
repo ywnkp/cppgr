@@ -34,3 +34,8 @@ add_executable(test_stub
     test_stub.cpp
 )
 target_link_libraries(test_stub gtest gtest_main)
+
+add_test(NAME test_stub
+    COMMAND $<TARGET_FILE:test_stub> --gtest_output=xml:${CMAKE_CURRENT_BINARY_DIR}/
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
