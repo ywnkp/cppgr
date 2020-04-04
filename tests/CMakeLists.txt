@@ -5,6 +5,7 @@ set(contrib_github_gtest_git_tag release-1.10.0)
 externalproject_add(contrib_github_gtest
     GIT_REPOSITORY    https://github.com/google/googletest.git
     GIT_TAG           ${contrib_github_gtest_git_tag}
+    GIT_CONFIG advice.detachedHead=false
     CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}"
     PREFIX contrib_github_gtest-${contrib_github_gtest_git_tag}
 )
