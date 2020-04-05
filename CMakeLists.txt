@@ -6,4 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 project(cppgr)
 
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(boost)
+
 add_subdirectory(tests)
