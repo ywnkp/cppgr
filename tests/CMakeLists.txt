@@ -41,3 +41,13 @@ add_test(NAME test_stub
     COMMAND $<TARGET_FILE:test_stub> --gtest_output=xml:${CMAKE_CURRENT_BINARY_DIR}/
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
+add_executable(test_fiber
+    test_fiber.cpp
+)
+target_link_libraries(test_fiber gtest gtest_main boost_fiber boost_context ${CMAKE_THREAD_LIBS_INIT})
+
+add_test(NAME test_fiber
+    COMMAND $<TARGET_FILE:test_fiber> --gtest_output=xml:${CMAKE_CURRENT_BINARY_DIR}/
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
